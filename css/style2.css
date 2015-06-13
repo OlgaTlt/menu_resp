@@ -1,0 +1,229 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: Sans-Serif;	
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+	background-color: #669980;
+	float: left;   /* This property helps to prevent collapsed margings */
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+
+h1 {
+	margin: 1.5%;
+	text-align: left;
+	letter-spacing: 0.05em;
+	color: #fff;
+}
+
+#logo {
+	text-decoration: none;
+}
+
+h2, p {
+	margin-left:20px;
+}
+/*button Menu for smaller screens */
+
+#toggleMenu {					
+	display: none;
+	background: #3a825f;
+	padding: 10px 15px;
+	color: #fff;
+	text-decoration: none;
+	height: 50px;
+	box-sizing: border-box;
+	font-weight: bold;
+	}
+/*************************
+FIRST LEVEL MENU ELEMENTS
+**************************/
+
+/* navigation container*/
+
+.container {	
+	background: #fff;
+	text-align: center;	
+	width: 100%;
+}
+
+/* main list */
+
+#menu {						
+	list-style: none;	
+	background-color: #3a825f;	
+	border-bottom: 1px solid #2e684c;
+	box-sizing: border-box;
+}
+
+#menu > li {
+border-right: 1px solid #2e684c;
+}
+
+#menu > li:first-child {
+	border-left: 1px solid #2e684c;
+}
+/*All levels menu items */
+
+#menu  li {																				
+	display: inline-block;  
+	position: relative; /* for submenus with absolute positioning */
+	text-align: center;
+	width: 9em;
+	text-transform: uppercase;
+}
+
+/* All links within lists */
+
+#menu li a {					
+	text-decoration: none;
+	line-height: 48px;
+	width: 100%;
+	color: #fff;
+	display: block;
+	font-weight: bold;	
+}
+
+#menu li a:hover {
+	background-color: #87b9a0;
+}
+
+ /*************************
+SUBMENU ELEMENTS
+**************************/
+
+/* All submenus */
+
+#menu  ul {
+	list-style: none;
+	position: absolute;
+	left: -9999px;
+	background: #41916a;
+}
+
+#menu li li {
+	display: block; /*this property is used for smaller screens */
+	text-align: left;
+	width: 12em;
+	border-top: 1px solid #347454;
+}
+#menu li li:first-child {
+	border-top: none;
+}
+/*This is a second level - submenu links. Because we don't use ">" sign  these properties will be inherited */
+
+#menu li li a {
+	padding-left: 20px;
+	width: 100%;
+	box-sizing: border-box;
+}
+/*This is a third level menu links. Property "display: block" is inhereted*/
+
+#menu ul li > ul {
+	background: #549c78;
+	width: 100%;
+}
+
+/*************************
+HOVER RULES FOR jQuery
+**************************/
+
+/*Positioning the submenus relative to their parents with hover class */
+
+/*First level submenues */
+#menu  > li.hover > ul {
+	left: 0;
+
+}
+
+/* Second level submenu */
+#menu li  li.hover > ul {
+	left: 100%;
+	top: 0;
+}
+
+
+@media screen and (max-width: 770px) {
+	
+	h1 {
+		font-size: 1.1em;
+		margin-left: 35%;
+	}
+		
+	header {
+		height: 50px;
+		border-bottom: 2px solid #3a825f;
+	}
+	.container {
+		position: absolute;
+		top: 51px;
+		clear: left;
+	}
+	
+	#toggleMenu {					
+		float: left;
+		position: relative;
+}
+	#menu {
+		font-size: 0.9em;
+		width: 75%;
+		border-top: none;
+	}
+	
+	 #menu ul {
+		width: 100%;
+	}
+		
+	#menu > li {
+		display: block;
+		text-align: left;
+		width: 100%;
+		border-top: 1px solid #2e684c;
+		box-sizing: border-box;
+	}
+	
+	#menu li li {
+	width: 100%;
+	}
+		
+	#menu li a {
+		line-height: 40px;	
+		padding-left: 20px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	#menu li li a, #menu li li li a {
+	text-align: left;
+	display: block;
+	border: none;
+	}
+	
+	#menu li.hover > ul, #menu li li.hover > ul {
+		position: static;	
+	}
+	.arrowright {
+	background-image: url(../images/arr_right.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	display: block;
+}
+	.arrowdown {
+	background-image: url(../images/arr_down.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	display: block;
+}
+
+}
+
+
+
+
+
